@@ -1,8 +1,9 @@
 # EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS
 
-AIM: To implement First-Come-First-Serve (FCFS) Scheduling
+## AIM: 
+To implement First-Come-First-Serve (FCFS) Scheduling
 
-ALGORITHM:
+## ALGORITHM:
 Start with a queue (or a list) to represent the ready queue of processes.Initialize a timer or clock to 0.Read the number of processes (n) and create a data structure to store process information, including arrival time (AT) and burst time (BT) for each process.Read the arrival time and burst time for each process and store them in the data structure.Sort the processes in the ready queue based on their arrival times in ascending order. This step ensures that processes are executed in the order they arrive.Initialize the waiting time (WT) and turnaround time (TAT) for the first process to 0.
 
 For each process in the ready queue (in the order of arrival):
@@ -17,7 +18,7 @@ d. Calculate the turnaround time (TAT) for the process as the finish time minus 
 
 e. Update the current time to the finish time.caculate the average waiting time (AWT) and average turnaround time (ATAT) for all processes by summing up the individual waiting times and turnaround times and dividing by the total number of processes.Display the waiting time, turnaround time, and other relevant information for each process.Display the average waiting time and average turnaround time for all processes.End.
 
-PROGRAM:
+## PROGRAM:
 ```
 #include<stdio.h>
 int main()
@@ -60,16 +61,18 @@ int main()
 printf("\n--------------------------------------------------------------");
 printf("\n Average waiting time is %5.2f\n average tat is%5.2
 ```
-OUTPUT:
+## OUTPUT:
 ![Screenshot 2023-10-06 090516](https://github.com/s-adhithya/EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS/assets/113497423/dc1e17d5-67ab-48b5-afac-0ab5d2e34549)
 
 
-RESULT: First-Come-First-Serve Scheduling is implemented successfully.
+## RESULT:
+First-Come-First-Serve Scheduling is implemented successfully.
 
 
-AIM: To implement Shortest Job First (SJF) Preemptive Scheduling
+## AIM: 
+To implement Shortest Job First (SJF) Preemptive Scheduling
 
-ALGORITHM:
+## ALGORITHM:
 Initialize variables and arrays to store process information, such as process ID (p), arrival time (at), burst time (bt), start time (st), finish time (ft), waiting time (wt), turnaround time (tt), response ratio (rr), and a flag to mark completed processes (iscompleted).Read the number of processes (n) from the user.Read the process ID, arrival time, and burst time for each process and store them in respective arrays (p, at, bt).Initialize variables, such as nextst (next start time) and counters.
 
 Loop until all processes are completed:
@@ -84,7 +87,7 @@ d. Mark the selected process as completed.
 
 e. Update the nextst to the finish time of the selected process.Calculate the average waiting time (AWT) and average turnaround time (ATT) by summing up the individual waiting times and turnaround times and dividing by the total number of processes,Display the process information, including process ID, arrival time, burst time, start time, finish time, waiting time, turnaround time, and response ratio.Display the average waiting time and average turnaround time.
 
-PROGRAM:
+## PROGRAM:
 ```
 #include<stdio.h>
 int main()
@@ -148,16 +151,18 @@ int main()
 }
 ```
 
-OUTPUT:
+## OUTPUT:
 ![Screenshot 2023-10-06 090703](https://github.com/s-adhithya/EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS/assets/113497423/bc994a7b-09bf-4d65-bf1b-b34f77bf505e)
 
 
-RESULT: Shortest Job First (SJF) preemptive scheduling is implemented successfully.
+## RESULT:
+Shortest Job First (SJF) preemptive scheduling is implemented successfully.
 
 
-AIM: To implement Shortest Job First (SJF) Non-Preemptive Scheduling
+## AIM: 
+To implement Shortest Job First (SJF) Non-Preemptive Scheduling
 
-ALGORITHM:
+## ALGORITHM:
 Initialize variables and arrays to store process information, such as process ID (p), arrival time (at), burst time (bt), start time (st), finish time (ft), waiting time (wt), turnaround time (tt), response ratio (rr), and a flag to mark completed processes (iscompleted).Read the number of processes (n) from the user.Read the process ID, arrival time, and burst time for each process and store them in respective arrays (p, at, bt).Initialize variables, such as nextst (next start time) and counters.
 
 Loop until all processes are completed:
@@ -172,7 +177,7 @@ d. Mark the selected process as completed.
 
 e. Update the nextst to the finish time of the selected process.Calculate the average waiting time (AWT) and average turnaround time (ATT) by summing up the individual waiting times and turnaround times and dividing by the total number of processes,Display the process information, including process ID, arrival time, burst time, start time, finish time, waiting time, turnaround time, and response ratio.Display the average waiting time and average turnaround time.
 
-PROGRAM:
+## PROGRAM:
 ```
 #include<stdio.h>
 int main()
@@ -234,15 +239,17 @@ int main()
   printf("\nAverage turn around time is %5.2f",att);
 }
 ```
-OUTPUT:
+## OUTPUT:
 ![Screenshot 2023-10-06 090723](https://github.com/s-adhithya/EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS/assets/113497423/cac2be50-9f7c-4fa9-a6cb-2cbd4bf3fa7f)
 
 
-RESULT: Shortest Job First (SJF) Non-preemptive scheduling is implemented successfully.
+## RESULT: 
+Shortest Job First (SJF) Non-preemptive scheduling is implemented successfully.
 
-AIM: To implement Round Robin (RR) Scheduling
+## AIM: 
+To implement Round Robin (RR) Scheduling
 
-ALGORITHM:
+## ALGORITHM:
 Initialize variables and arrays to store process information, such as process ID (process_id), arrival time (arrival_time), burst time (burst_time), completion time (completion_time), waiting time (waiting_time), and turnaround time (turnaround_time).Read the number of processes (n) from the user.Input process information for each process, including arrival time and burst time, and store this information in the respective arrays.Sort the processes based on their arrival times in ascending order using a simple bubble sort algorithm. This step ensures that processes are in the order of their arrival.Initialize the current time (time) to 0.
 
 Perform the scheduling loop for all processes:
@@ -255,7 +262,7 @@ c. If "shortest_job" remains -1, it means no process is available to run at this
 
 d. If a process is available (shortest_job != -1), execute the selected process. Update the completion time, waiting time, and turnaround time for this process. Mark the burst time of the completed process as -1 to indicate completion.Display the scheduling information in a tabular format, including Process ID (P), Arrival Time (AT), Burst Time (BT), Completion Time (CT), Waiting Time (WT), and Turnaround Time (TAT) for each process.
 
-PROGRAM:
+## PROGRAM:
 ```
 #include <stdio.h>
 
@@ -343,16 +350,18 @@ int main() {
     return 0;
 }
 ```
-OUTPUT:
+## OUTPUT:
 ![Screenshot 2023-10-06 090801](https://github.com/s-adhithya/EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS/assets/113497423/a1db1706-1945-4b2d-9005-e986c7d61cc2)
 
 
-RESULT: Round Robin (RR) Scheduling is implemented successfully.
+## RESULT: 
+Round Robin (RR) Scheduling is implemented successfully.
 
 
-AIM: To implement Priority Preemptive Scheduling
+## AIM:
+To implement Priority Preemptive Scheduling
 
-ALGORITHM:
+## ALGORITHM:
 Initialize variables and arrays to store process information, scheduling data, and status flags. Read the number of processes (n) and the time quantum (tq) from the user.Input process information for each process, including process ID (PRO), arrival time (AT), and burst time (BUT). Also, calculate the total remaining burst time (totalsrt) and create a temporary array (tempsrt) to store the initial burst times. Initialize the queue (queue), front (f), rear (r), and count variables for the ready queue.
 
 Also, initialize the timer to 0. Enqueue processes that arrive at time 0 into the ready queue and mark them as entered (isentered) with count increments.Enter the main scheduling loop, which continues until the timer reaches the total remaining burst time (totalsrt). Dequeue a process from the front of the ready queue (queue[f]) and select it for execution.If the selected process is starting for the first time (isstarted is 0), record its start time (ST) and calculate its waiting time (WT).Execute the process for a time quantum (tq) or until its burst time (BUT) is less than tq, whichever comes first.
@@ -361,7 +370,7 @@ Update the timer accordingly. If the process has completed its burst time (BUT b
 
 Display the scheduling results, including process ID (PRO), arrival time (AT), initial burst time (BUT), start time (ST), finish time (FT), waiting time (WT), turnaround time (TT), and response ratio (RR) for each process.Calculate and display the average waiting time (AWT) and average turnaround time (ATAT) for all processes.
 
-PROGRAM:
+## PROGRAM:
 ```
 #include<stdio.h>
 int main()
@@ -480,23 +489,25 @@ int main()
   printf("\nAvg turn around time is %5.2f",atat);
 }
 ```
-OUTPUT:
+## OUTPUT:
 ![Screenshot 2023-10-06 090832](https://github.com/s-adhithya/EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS/assets/113497423/21d86525-fe66-48c1-9c23-e249761f03bd)
 
 
-RESULT: Priority Preemptive scheduling is implemented successfully.
+## RESULT:
+Priority Preemptive scheduling is implemented successfully.
 
 
-AIM: To implement Priority Non-Preemptive Scheduling
+## AIM: 
+To implement Priority Non-Preemptive Scheduling
 
-ALGORITHM:
+## ALGORITHM:
 Initialize variables and arrays to store process information, scheduling data, and status flags.Input the number of processes and their details, including process ID (PID), arrival time (AT), burst time (SRT), and priority.Calculate the total remaining burst time (totalsrt) by summing up the burst times of all processes and create a temporary array (tempsrt) to store the initial burst times.Initialize the timer to 0.Enter the main scheduling loop, which continues until all processes have completed execution (i.e., completed variable reaches n).
 
 Within the loop, find the process with the highest priority that has arrived and not yet completed and has the lowest priority (higher priority value).If a process is found, update its start time (ST) and calculate waiting time (WT) if it's starting for the first time (isstarted[i] is 0).Reduce the remaining burst time (SRT) of the selected process by 1, indicating the execution of one time unit.Increment the timer by 1.
 
 If the selected process has completed its execution (SRT becomes 0), update its finish time (FT), waiting time (WT), turnaround time (TT), response ratio (RR), and set the process as completed (iscompleted[i] is 1).Continue this loop until all processes are completed.After scheduling all processes, display the scheduling results in a tabular format, including PID, AT, SRT, ST, FT, WT, TT, RR, and priority for each process.Calculate and display the average waiting time (AWT) and average turnaround time (ATAT) for all processes.
 
-PROGRAM:
+## PROGRAM:
 ```
 #include<stdio.h>
  // structure representing a structure
@@ -632,9 +643,10 @@ int main() {
   return 0;
 }
 ```
-OUTPUT:
+## OUTPUT:
 ![Screenshot 2023-10-06 090327](https://github.com/s-adhithya/EX.5-IMPLEMENTATION-OF-CPU-SCHEDULING-ALGORITHMS/assets/113497423/31a6603d-1e53-45fd-a81a-4714e595bc3f)
 
 
-RESULT: Priority Non-preemptive scheduling is implemented successfully.
+## RESULT: 
+Priority Non-preemptive scheduling is implemented successfully.
 
